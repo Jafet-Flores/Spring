@@ -19,6 +19,19 @@
 		<spring-cloud.version>2020.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>com.formacionbdi.springboot.app.usuarios.commons</groupId>
+			<artifactId>springboot-servicio-usuarios-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-data-jpa</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -48,25 +61,21 @@
 			<artifactId>spring-security-oauth2</artifactId>
 			<version>2.3.8.RELEASE</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-jwt</artifactId>
 			<version>1.1.1.RELEASE</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
+
 		<dependency>
-			<groupId>com.formacionbdi.springboot.app.usuarios.commons</groupId>
-			<artifactId>springboot-servicio-usuarios-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-data-jpa</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -89,15 +98,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>netflix-candidates</id>
-			<name>Netflix Candidates</name>
-			<url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 </project>
